@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<tittle>
+			Ordering notice
+		</tittle>
+	</head>
+	<body>
+		<h1>
+			Ordering notice
+		</h1>
+		<p>
+			Dear {{ person_name }},
+		</p>
+		<p>
+			Thanks to placing an order from {{ company }}. It's scheduled to ship on {{ ship_date|date:"F,j,Y" }}.
+		</p>
+		<p>
+			Here are the items you've ordered:
+		</p>
+		<ul>
+			{% for item in item_list %}
+			<li>
+				{{ item }}
+			</li>
+		</ul>
+		{% if ordered_warranty %}		
+			<p>
+				Your warranty information be included in packaging
+			</p>
+		{% else %}
+			<p>
+				Your didn't order a warranty, you are on your own when the products inevitably stop working.			
+			</p>
+
+		{% endif %}
+		<p>
+			Sincerely, </br>
+			{{ company }}
+		</p>
+
+	</body>
+</html>

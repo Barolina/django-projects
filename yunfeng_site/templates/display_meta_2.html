@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}
+The  page used to show request metas
+{% endblock %}
+
+{% block content %}
+	<table>
+	{% for k,v in data %}
+		<tr>
+		<td>
+			{{  k }}
+		</td>
+		<td>
+			{{  v }}
+		</td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
+
+
