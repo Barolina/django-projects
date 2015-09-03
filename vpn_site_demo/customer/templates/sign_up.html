@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+	注册 
+{% endblock %}
+
+{% block content %}
+	<form role="form" method="post" >
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		{% buttons submit="确认" reset="重置" %}
+		{% endbuttons %}
+	</form>
+{% endblock %}

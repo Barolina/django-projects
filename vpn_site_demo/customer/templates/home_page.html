@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+	USTC LUG 积分网站!
+{% endblock %}
+
+{% block content %}
+	<p>	欢迎来到USTC LUG 积分网站！</p>
+
+	<p>请登录或注册</p>
+	{% bootstrap_button "登录" button_type="link" href="login/" button_class="btn-primary" %}
+	{% bootstrap_button "注册" button_type="link" href="sign_up/" button_class="btn-primary" %}
+	
+{% endblock %}
+
