@@ -11,12 +11,14 @@ Class-based views 1. Add an import:  from other_app.views import Home 2. Add a U
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.views import login, logout 
 from customer import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.home_page),
-    url(r'^login/$',views.LoginFormView.as_view(success_url="/credits/")),
-    url(r'^sign_up/$',views.SingUpFormView.as_view(success_url="/credits/")),
+    url(r'^login/$',login),
+    #url(r'^register/$',views.SingUpFormView.as_view(success_url="/credits/")),
+    url(r'^register/$',views.register),
     url(r'^credits/$',views.CreditsFormView.as_view()),
 ]
