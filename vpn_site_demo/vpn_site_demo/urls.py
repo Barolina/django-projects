@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.home_page),
     url(r'^login/$',login),
-    #url(r'^register/$',views.SingUpFormView.as_view(success_url="/credits/")),
-    url(r'^register/$',views.register),
-    url(r'^credits/$',views.CreditsFormView.as_view()),
+    url(r'^register/$',views.SingUpFormView.as_view(success_url="/credit/")),
+#    url(r'^register/$',views.register),
+    url(r'^credit/$',views.CreditsFormView.as_view()),
 ]

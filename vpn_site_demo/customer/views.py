@@ -12,22 +12,24 @@ def home_page(request):
 class LoginFormView(FormView):
 	template_name = "login.html"
 	form_class = LoginForm
+
 def login(request):
     return render_to_response('login.html')
 
 class SingUpFormView(FormView):
 	template_name = "sign_up.html"
 	form_class = SignUpForm 
+
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return  HttpResponseRedirect('/home/')
+            return  HttpResponseRedirect('/credit/')
     else:
         form = UserCreationForm()
     return render_to_response('registration/register.html',{'form': form,}, context_instance=RequestContext(request))
 	
 class CreditsFormView(FormView):
-	template_name = "credits.html"
+	template_name = "credit.html"
 	form_class = CreditsForm 
